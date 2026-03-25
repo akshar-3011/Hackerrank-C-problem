@@ -35,13 +35,15 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-void sum(int num1, int num2){
+void sum(int num1, int num2)
+{
     int res = num1 + num2;
-    printf("The sum of %d and %d is %d.",num1, num2, res);
+    printf("The sum of %d and %d is %d.", num1, num2, res);
 }
-int main() {
-    int a,b;
-    scanf("%d %d",&a, &b);
-    sum(a,b);
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    sum(a, b);
     return 0;
 }
