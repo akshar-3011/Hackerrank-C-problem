@@ -29,28 +29,26 @@
 // The sum of last digits is: 9
 
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-void sumLastDigits(int a, int b)
+
+int sumLastDigits(int a, int b)
 {
-    short Ld1 = 0, Ld2 = 0, sum = 0;
-    if (a >= 9)
-    {
-        Ld1 = a % 10;
-    }
-    if (b >= 9)
-    {
-        Ld2 = b % 10;
-    }
-    sum = Ld1 + Ld2;
-    printf("The sum of last digits is: %hd", sum);
+    int Ld1 = a % 10;
+    int Ld2 = b % 10;
+
+    // manually make them positive if negative
+    if (Ld1 < 0) Ld1 = -Ld1;
+    if (Ld2 < 0) Ld2 = -Ld2;
+
+    return Ld1 + Ld2;
 }
+
 int main()
 {
     int a, b;
     scanf("%d %d", &a, &b);
-    sumLastDigits(a, b);
+
+    int result = sumLastDigits(a, b);
+    printf("The sum of last digits is: %d", result);
 
     return 0;
 }

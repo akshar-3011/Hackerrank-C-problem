@@ -40,16 +40,23 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-void charUpper(char a)
+
+char charUpper(char a)
 {
-    char charUp = a - 32;
-    printf("The uppercase of %c is %c", a, charUp);
+    if (a >= 'a' && a <= 'z') {
+        return a - 32;
+    }
+    return a; 
 }
+
 int main()
 {
     char ch;
-    scanf("%c", &ch);
-    charUpper(ch);
+    scanf(" %c", &ch);
+
+    char result = charUpper(ch);
+
+    printf("The uppercase of %c is %c", ch, result);
 
     return 0;
 }

@@ -36,16 +36,25 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-void toSeconds(int hours, int minutes, int seconds)
+
+int toSeconds(int hours, int minutes, int seconds)
 {
-    int totalSeconds = hours * 60 * 60 + minutes * 60 + seconds;
-    printf("Total seconds: %d", totalSeconds);
+    return hours * 3600 + minutes * 60 + seconds;
 }
+
 int main()
 {
-    short hour, min, sec;
-    scanf("%hd %hd %hd", &hour, &min, &sec);
-    toSeconds(hour, min, sec);
+    int hour, min, sec;
+    scanf("%d %d %d", &hour, &min, &sec);
+
+    if (min < 0 || min >= 60 || sec < 0 || sec >= 60)
+    {
+        printf("Invalid time input");
+        return 0;
+    }
+
+    int result = toSeconds(hour, min, sec);
+    printf("Total seconds: %d", result);
 
     return 0;
-}  
+}

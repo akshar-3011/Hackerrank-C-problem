@@ -37,16 +37,26 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-void distance(char char1, char char2)
+int char_distance(char c1, char c2)
 {
-    short diff = char2 - char1;
-    printf("The distance between %c and %c is %hd", char1, char2, diff);
+    short diff = c2 - c1;
+    return diff;
 }
+
 int main()
 {
     char ch1, ch2;
-    scanf("%c %c", &ch1, &ch2);
-    distance(ch1, ch2);
+    scanf(" %c %c", &ch1, &ch2);
+
+    int result = char_distance(ch1, ch2);
+
+    printf("The distance between %c and %c is %d", ch1, ch2, result);
 
     return 0;
 }
+
+
+
+
+
+
