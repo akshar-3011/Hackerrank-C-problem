@@ -36,3 +36,28 @@
 
  // test commit
 // test commit
+
+#include <stdio.h>
+#include <stdbool.h>
+
+bool checkRange(int num, int min, int max) {
+    if(min <= num && num <= max){
+        return 1;
+    }
+    return 0;
+}
+
+int main() {
+    int num, min, max;
+    scanf("%d %d %d", &num, &min, &max);
+    
+    bool res = checkRange(num, min, max);
+
+    if (res == 1){
+        printf("In Range");
+    } else {
+        printf("Out of Range");
+    }
+
+    return 0;
+}
